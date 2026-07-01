@@ -1,0 +1,36 @@
+# ==========================================
+# SYSTEM & NAVIGATION ALIASES
+# ==========================================
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# ==========================================
+# CUSTOM POWER-USER SHORTCUTS
+# ==========================================
+alias cl='clear'
+alias py='python3'
+alias off='poweroff'
+alias up='sudo apt update && sudo apt upgrade -y'
+alias o='open .'
+alias c='code .'
+
+# Environment Layout Toggles
+alias qwerty="setxkbmap us"
+alias dvorak="setxkbmap us dvorak"
+
+# Health/Eye Care
+alias day='redshift -x'
+alias night='redshift -O 2000'
+
+# Tools & Gaming
+alias tt='ttyper -w 30'
+alias sleep="cmatrix -s -b -C green"
+alias ws='dbus-send --session --dest=org.Cinnamon --type=method_call /org/Cinnamon org.Cinnamon.ShowExpo'
+
+# Notification alert tool for long-running processes
+#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
