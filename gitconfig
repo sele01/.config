@@ -1,0 +1,39 @@
+[user]
+    name = sele01
+    email = sele.edu21@gmail.com
+
+[core]
+    # Tells Git which text editor to open for commit messages (nano, vim, code, etc.)
+    editor = nano
+    # Ensures line endings play nice between Linux, Mac, and Windows
+    autocrlf = input
+    # Speeds up status checks on large repos by caching file changes
+    fsmonitor = true
+
+[init]
+    # Automatically names your default branch 'main' instead of 'master'
+    defaultBranch = main
+
+[pull]
+    # Forces 'git pull' to only work if it can fast-forward, preventing accidental ugly merge commits
+    ff = only
+
+[commit]
+    # Automatically shows the full file diff inside your editor when writing a commit message
+    verbose = true
+
+[color]
+    # Enables bright, distinct UI colors in your terminal outputs
+    ui = auto
+
+[alias]
+    # Handcrafted shortcuts to make your terminal work effortless
+    st = status
+    co = checkout
+    br = branch
+    cm = commit -m
+    ps = push
+    pl = pull
+    
+    # Ultimate visual log history tracker (Try typing 'git lg' in your terminal!)
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %s %C(italic white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --all
