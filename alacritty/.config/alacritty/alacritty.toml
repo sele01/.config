@@ -1,0 +1,10 @@
+
+[env]
+TERM = "xterm-256color"
+
+# Alacritty Window Configuration
+[window]
+startup_mode = "Fullscreen"
+
+# Optional: Remove window decorations for a completely seamless look
+decorations = "None"
