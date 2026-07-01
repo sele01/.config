@@ -1,8 +1,0 @@
-
-# Ignore common system junk files inside your dotfiles folder
-.DS_Store
-Thumbs.db
-*.log
-.cache/
-
-

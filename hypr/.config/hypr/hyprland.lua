@@ -1,0 +1,202 @@
+-- ~/.config/hypr/hyprland.lua
+
+--------------------
+----  SOURCES  -----
+--------------------
+require("env")
+require("startup")
+
+----------------------------
+---- ENVIRONMENT CONFIG ----
+----------------------------
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("XDG_SESSION_TYPE", "wayland")
+
+-- Safely disabled for your AMD Ryzen processor (Nvidia files cause issues here)
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("GBM_BACKEND", "nvidia-drm")
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+
+-------------------------
+---- LOCAL VARIABLES ----
+-------------------------
+local mainMod      = "SUPER"
+local term         = "kitty"
+local brow         = "zen"
+local test_brow    = "firefox"
+local editor       = "nvim"
+local craft_ws     = 2
+local brow_ws      = 3
+local test_ws     = 4
+
+local monitor_laptop   = "eDP-1" 
+local monitor_external = "HDMI-A-1"
+
+------------------
+---- MONITORS ----
+------------------
+
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "1.0" }) -- targets primary fallback panel
+hl.monitor({ output = monitor_external, mode = "preferred", position = "auto", scale = "1.0" })
+
+-------------------
+-----  INPUT  -----
+-------------------
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "dvorak",
+        resolve_binds_by_sym = true,
+        follow_mouse = 1,
+        sensitivity = 0,
+        touchpad = {
+            natural_scroll = false,
+            disable_while_typing = true,
+            clickfinger_behavior = true,
+        },
+        repeat_rate = 100,
+        repeat_delay = 200,
+    },
+    cursor = {
+        inactive_timeout = 100,
+        default_monitor = monitor_external,
+        hide_on_key_press = true,
+        warp_back_after_non_mouse_input = false,
+    },
+    general = {
+        gaps_in = 0,
+        gaps_out = 0,
+        border_size = 1,
+        col = {
+            active_border = { colors = {"rgba(33ccff4a)", "rgba(00ff994a)"}, angle = 45 },
+            inactive_border = "rgba(5959591a)",
+        },
+        allow_tearing = false,
+    },
+    decoration = {
+        rounding = 10,
+        shadow = { enabled = false },
+        blur = { enabled = false },
+    },
+    misc = {
+        vrr = 1,
+        focus_on_activate = true,
+        force_default_wallpaper = 0,
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        allow_session_lock_restore = true,
+    },
+    animations = {
+        enabled = false,
+    },
+})
+
+---------------------
+--- PER-DEVICE HW ---
+---------------------
+hl.device({
+    name = "laptop-keyboard-name", 
+    kb_variant = "dvorak",
+    kb_options = "caps:swapescape",
+})
+
+hl.device({
+    name = "epic-mouse-v1",
+    sensitivity = -0.5,
+})
+
+--------------------------
+--- WORKSPACE BINDINGS ---
+--------------------------
+hl.workspace_rule({ workspace = 1, monitor = monitor_laptop })
+hl.workspace_rule({ workspace = craft_ws, monitor = monitor_external })
+hl.workspace_rule({ workspace = brow_ws, monitor = monitor_external })
+hl.workspace_rule({ workspace = test_ws, monitor = monitor_external })
+
+hl.workspace_rule({ workspace = "special:notes", on_created_empty = 'bash -c "cd ~/obsidian && neovide"' })
+hl.workspace_rule({ workspace = "special:read", on_created_empty = 'alacritty --hold -e bash -c "cd ~/projects/focus_read && ./focus_read --paste"' })
+
+-------------------------
+----- WINDOW RULES ------
+-------------------------
+hl.window_rule({
+    name = "suppress-maximize",
+    match = { class = ".*" },
+    suppress_event = "maximize",
+})
+
+hl.window_rule({
+    name = "ignore-phantom-windows",
+    match = {
+        class = "^$",
+        title = "^$",
+        xwayland = true,
+        float = true,
+        fullscreen = false,
+        pin = false,
+    },
+    no_focus = true,
+})
+
+hl.window_rule({
+    name = "test-browser",
+    match = { class = "^" .. test_brow .. "$" },
+    workspace = test_ws,
+})
+
+hl.window_rule({
+    name = "browser",
+    match = { class = "^" .. brow .. "$" },
+    workspace = brow_ws,
+})
+
+hl.window_rule({
+    name = "narrow-windows",
+    match = { class = ".*" },
+    center = true,
+    pseudo = true,
+})
+
+hl.window_rule({ name = "popups", match = { workspace = "name:special:read" } })
+hl.window_rule({ name = "popups", match = { workspace = "name:special:notes" } })
+
+-------------------------
+-----  KEYBINDINGS  -----
+-------------------------
+hl.bind(mainMod .. "+Return", hl.dsp.exec_cmd(term))
+hl.bind(mainMod .. "+Space", hl.dsp.window.cycle_next()) 
+hl.bind(mainMod .. "+C", hl.dsp.window.close())             
+hl.bind(mainMod .. "+SHIFT+M", hl.dsp.exit())        
+hl.bind(mainMod .. "+W", hl.dsp.exec_cmd("makoctl dismiss"))
+
+-- Mouse actions
+hl.bind(mainMod .. "+mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. "+mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Custom script and execution shortcuts
+hl.bind(mainMod .. "+SHIFT+C", hl.dsp.exec_cmd("/home/yohansh/.config/hypr/rofi-wifi.sh"))
+hl.bind(mainMod .. "+R", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind("SUPER+V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
+hl.bind("SUPER+SHIFT+V", hl.dsp.exec_cmd("/home/yohansh/.config/hypr/rofi-prompt.py"))
+hl.bind("SUPER+SHIFT+Space", hl.dsp.exec_cmd("voxtype record toggle"))
+
+-- Direct Workspace Nav Switching
+hl.bind(mainMod .. "+Q", hl.dsp.focus({ workspace = 1 }))
+hl.bind(mainMod .. "+A", hl.dsp.focus({ workspace = craft_ws }))
+hl.bind(mainMod .. "+O", hl.dsp.focus({ workspace = brow_ws }))
+hl.bind(mainMod .. "+E", hl.dsp.focus({ workspace = test_ws }))
+hl.bind(mainMod .. "+L", hl.dsp.workspace.toggle_special("read"))
+hl.bind(mainMod .. "+S", hl.dsp.workspace.toggle_special("notes"))
+
+-- Moving Windows to Workspace Contexts
+hl.bind(mainMod .. "+SHIFT+Q", hl.dsp.window.move({ workspace = 1 }))
+hl.bind(mainMod .. "+SHIFT+A", hl.dsp.window.move({ workspace = craft_ws }))
+hl.bind(mainMod .. "+SHIFT+O", hl.dsp.window.move({ workspace = brow_ws }))
+hl.bind(mainMod .. "+SHIFT+E", hl.dsp.window.move({ workspace = test_ws }))
+
+-- Media Control Audio/Brightness Keybinds
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 1%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 1%-"), { locked = true, repeating = true })
