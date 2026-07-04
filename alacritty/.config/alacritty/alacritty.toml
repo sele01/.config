@@ -2,9 +2,70 @@
 [env]
 TERM = "xterm-256color"
 
-# Alacritty Window Configuration
+# ==========================================
+# WINDOW & LAYOUT
+# ==========================================
 [window]
 startup_mode = "Fullscreen"
-
-# Optional: Remove window decorations for a completely seamless look
 decorations = "None"
+opacity = 0.93            # Subtle, elegant transparency
+dynamic_title = true
+
+[window.padding]
+x = 12                     # Gives text room to breathe away from the monitor edge
+y = 12
+
+# ==========================================
+# TYPOGRAPHY (FONT SELECTION)
+# ==========================================
+[font]
+size = 16.0                # Adjust to your preference
+
+[font.normal]
+family = "monospace"  # High-quality coding font with icon/glyph support
+style = "Regular"
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+# ==========================================
+# PERFORMANCE ENGINES
+# ==========================================
+[scrolling]
+history = 10000            # Large back-scroll buffer for code outputs
+
+# ==========================================
+# THEMING: MONOKAI NIGHT (STUNNING PROMPT ACCENTS)
+# ==========================================
+[colors.primary]
+background = "#1a1a1a"     # Pure, deep charcoal black
+foreground = "#f8f8f2"     # Clean off-white text
+
+[colors.normal]
+black   = "#272822"
+red     = "#f92672"
+green   = "#a6e22e"        # Pops beautiful bold greens for your user label
+yellow  = "#f4bf75"
+blue    = "#66d9ef"        # Highlights your path mapping elegantly
+magenta = "#ae81ff"
+cyan    = "#a1efe4"
+white   = "#f8f8f2"
+
+# ==========================================
+# KEYBOARD KEYBINDS (X11 & DESKTOP CORE)
+# ==========================================
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"           # Universal clipboard integration
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "CreateNewWindow"
