@@ -35,3 +35,22 @@ alias ws='dbus-send --session --dest=org.Cinnamon --type=method_call /org/Cinnam
 
 # Notification alert tool for long-running processes
 #alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+#Terminal openrouter api shorts
+# 1. Qwen 3 Coder Free (The absolute best free coding model right now)
+alias ai-qwen='uv tool run --from aider-chat aider --model openrouter/qwen/qwen3-coder:free'
+
+# 2. Meta Llama 3.3 Free (Incredibly fast for quick fixes and debugging)
+alias ai-llama='uv tool run --from aider-chat aider --model openrouter/meta-llama/llama-3.3-70b-instruct:free'
+
+# 3. Poolside Laguna M.1 Free (A dedicated free agent model built purely for software engineering)
+alias ai-laguna='uv tool run --from aider-chat aider --model openrouter/poolside/laguna-m.1:free'
+
+# 4. OpenAI GPT-OSS (Incredibly stable general coding assistant, rarely rate-limited)
+alias ai-gpt='uv tool run --from aider-chat aider --model openrouter/openai/gpt-oss-120b:free'
+
+# 5. NVIDIA Nemotron Ultra (Massive 1M context window, excellent for debugging whole repositories)
+alias ai-nvidia='uv tool run --from aider-chat aider --model openrouter/nvidia/nemotron-3-ultra-550b-a55b:free'
+
+# 6. Meta Llama 3.3 (Super fast fallback for general script adjustments and quick fixes)
+alias ai-llama='uv tool run --from aider-chat aider --model openrouter/meta-llama/llama-3.3-70b-instruct:free'

@@ -2,7 +2,7 @@
 # SKILL DEVELOPMENT & TYPING MECHANICS
 # ==========================================
 
-export TYPING_LESSONS="$HOME/.typing_lessons"
+export TYPING_LESSONS="$HOME/.typing"
 
 # Practice typing your recent shell usage patterns
 practicehistory() {
