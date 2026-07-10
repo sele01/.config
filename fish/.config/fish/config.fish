@@ -17,7 +17,57 @@ end
 zoxide init fish | source
 
 # Created by `pipx` on 2026-07-09 07:23:47
-set PATH $PATH /home/skymoon/.local/bin
 
-#API from openroute
-set -gx OPENROUTER_API_KEY  "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"
+# 1. Load secret API keys safely (keeps them out of Git)
+test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
+
+# 2. Pyenv setup
+set -gx PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
+
+# 3. Add local binaries to PATH (clean, non-duplicate prepending)
+set -gx PATH $HOME/.local/bin $PATH
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env.fish"
+# <<< railway initialize <<<
+
+# 4. Launch fastfetch on startup
+fastfetch# Created by `pipx` on 2026-07-09 07:23:47
+
+# 1. Load secret API keys safely (keeps them out of Git)
+test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
+
+# 2. Pyenv setup
+set -gx PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
+
+# 3. Add local binaries to PATH (clean, non-duplicate prepending)
+set -gx PATH $HOME/.local/bin $PATH
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env.fish"
+# <<< railway initialize <<<
+
+# 4. Launch fastfetch on startup
+fastfetch# Created by `pipx` on 2026-07-09 07:23:47
+
+# 1. Load secret API keys safely (keeps them out of Git)
+test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
+
+# 2. Pyenv setup
+set -gx PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
+
+# 3. Add local binaries to PATH (clean, non-duplicate prepending)
+set -gx PATH $HOME/.local/bin $PATH
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env.fish"
+# <<< railway initialize <<<
+
+# 4. Launch fastfetch on startup
+fastfetch

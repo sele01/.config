@@ -5,3 +5,5 @@ Thumbs.db
 .cache/
 
 
+fish/.config/fish/secrets.fish
+fish/.config/fish/secrets.fish

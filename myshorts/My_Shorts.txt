@@ -1,0 +1,59 @@
+
+
+
+Vimium
+f (open link)
+F(open link in new tab)
+j/k(scroll down/up)
+gg/G(top/bottom page)
+T(search open tabs)
+x(close current tab)
+X(restore closed tab)
+
+
+
+Sioyek;	
+
+# --- FILE NAVIGATION ---
+o               # Open file browser to select a new PDF
+O (Shift+o)     # Open searchable list of recently opened files
+t               # Open Table of Contents
+gg / G          # Go to first / last page of document
+[NUM]gg         # Go to specific page number (e.g., 31gg for page 31)
+
+# --- SCROLLING & MOVEMENT ---
+j / k           # Scroll down / up
+d / u           # Scroll down / up half a page
+Space           # Page down
+Shift+Space     # Page up
+Ctrl+d        	# Scroll down full page
+Ctrl+u        	# Scroll up full page
+Ctrl+PageDown	# Go to next page
+Ctrl+PageUp   	# Go to previous page
+
+# --- ZOOM & DISPLAY ---
++ / -         # Zoom in / out
+w             # Fit page to screen width
+p             # Fit page to screen height
+F8            # Toggle dark mode
+F11           # Toggle full-screen mode
+
+# --- MARKS, BOOKMARKS & PORTALS ---
+m + [a-z]     # Set a local mark (e.g., 'mu' to set mark 'u')
+` + [a-z]     # Jump to a specific local mark
+b             # Create a bookmark at current location
+gb / gB       # Open bookmarks for current document / all documents
+p             # Create or activate a portal link between two locations
+
+# --- SEARCH & SMART JUMP ---
+/ / Ctrl+f    # Start text search
+n / N         # Jump to next / previous search result
+Middle Click  # Click reference/title to jump to it or search Google Scholar
+gh / gH       # Search highlights in current document / all documents
+
+# --- HISTORY & UTILITIES ---
+:             # Open interactive command palette / command mode
+Backspace     # Go back in viewing history
+Ctrl+Right    # Go forward in viewing history
+q             # Quit Sioyek
+

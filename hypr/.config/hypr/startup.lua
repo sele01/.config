@@ -14,3 +14,6 @@ hl.on("hyprland.start", function ()
     -- Start your notification manager
     hl.exec_cmd("mako &")
 end)
+
+
+
