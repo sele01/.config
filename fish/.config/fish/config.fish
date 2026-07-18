@@ -1,73 +1,62 @@
-# ==========================================
-# BASH CONFIGURATION BRIDGES (SHARED FILES)
-# ==========================================
-fish_add_path ~/.local/bin
+# ==============================================================================
+# 🌊 PROJECT: FISH SHELL SYSTEM ENVIRONMENT CONFIGURATION
+# ⚙️ MACHINE: SKÝMOON @ BABY ARCH ENVIRONMENT
+# ==============================================================================
 
-# 1. Load the shared typing environment safely
+# ------------------------------------------------------------------------------
+# 🗺️ SECTION 1: SYSTEM PATHS & BINARY PATHWAYS
+# ------------------------------------------------------------------------------
+fish_add_path ~/.local/bin
+set -gx PATH $HOME/.local/bin $PATH
+
+# Pyenv Core Engine Setup
+set -gx PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+if command -v pyenv &>/dev/null
+    pyenv init - | source
+end
+
+# ------------------------------------------------------------------------------
+# 🔗 SECTION 2: BASH CONFIGURATION BRIDGES & PLUGINS
+# ------------------------------------------------------------------------------
+# Safely sourcing shared configurations and modern CLI tools
+
 if test -f ~/.typing
     bass source ~/.typing
 end
 
-# 2. Load the shared system aliases safely 
 if test -f ~/.aliases
     bass source ~/.aliases
 end
 
-# Initialize Zoxide for Fish
-zoxide init fish | source
+# Initialize Zoxide (Smarter cd command)
+if command -v zoxide &>/dev/null
+    zoxide init fish | source
+end
 
-# Created by `pipx` on 2026-07-09 07:23:47
+# ------------------------------------------------------------------------------
+# 🔐 SECTION 3: DEPLOYMENT INFRASTRUCTURE & SECRETS
+# ------------------------------------------------------------------------------
+# Load secret local API keys securely (keeps them out of public Git tracking)
 
-# 1. Load secret API keys safely (keeps them out of Git)
-test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
+if test -f (status dirname)/secrets.fish
+    source (status dirname)/secrets.fish
+end
 
-# 2. Pyenv setup
-set -gx PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
+# Railway Cloud Deployment Engine Initialization
+if test -f "$HOME/.railway/env.fish"
+    source "$HOME/.railway/env.fish"
+end
 
-# 3. Add local binaries to PATH (clean, non-duplicate prepending)
-set -gx PATH $HOME/.local/bin $PATH
+# ------------------------------------------------------------------------------
+# 📊 SECTION 4: INTERACTIVE TERMINAL VISUALS
+# ------------------------------------------------------------------------------
+# Launch system hardware stats cleanly upon shell entry
 
-# >>> railway initialize >>>
-source "$HOME/.railway/env.fish"
-# <<< railway initialize <<<
+if command -v fastfetch &>/dev/null
+    fastfetch
+end
 
-# 4. Launch fastfetch on startup
-fastfetch# Created by `pipx` on 2026-07-09 07:23:47
-
-# 1. Load secret API keys safely (keeps them out of Git)
-test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
-
-# 2. Pyenv setup
-set -gx PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
-
-# 3. Add local binaries to PATH (clean, non-duplicate prepending)
-set -gx PATH $HOME/.local/bin $PATH
-
-# >>> railway initialize >>>
-source "$HOME/.railway/env.fish"
-# <<< railway initialize <<<
-
-# 4. Launch fastfetch on startup
-fastfetch# Created by `pipx` on 2026-07-09 07:23:47
-
-# 1. Load secret API keys safely (keeps them out of Git)
-test -f (status dirname)/secrets.fish; and source (status dirname)/secrets.fish
-
-# 2. Pyenv setup
-set -gx PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
-
-# 3. Add local binaries to PATH (clean, non-duplicate prepending)
-set -gx PATH $HOME/.local/bin $PATH
-
-# >>> railway initialize >>>
-source "$HOME/.railway/env.fish"
-# <<< railway initialize <<<
-
-# 4. Launch fastfetch on startup
-fastfetch
+# ==============================================================================
+# END OF CONFIGURATION - FILE DEPLOYED CLEANLY
+# ==============================================================================

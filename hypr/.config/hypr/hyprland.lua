@@ -52,7 +52,7 @@ hl.config({
             clickfinger_behavior = true,
         },
         repeat_rate = 100,
-        repeat_delay = 200,
+        repeat_delay = 250
     },
     cursor = {
         inactive_timeout = 100,
