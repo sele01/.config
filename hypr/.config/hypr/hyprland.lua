@@ -43,6 +43,8 @@ hl.config({
         kb_layout = "us,us",
         kb_variant = "dvorak,",
         kb_options = "grp:win_space_toggle",
+	kb_options = "lv3:win_switch",
+	kb_options = "caps:swapescape",
         resolve_binds_by_sym = true,
         follow_mouse = 1,
         sensitivity = 0,
