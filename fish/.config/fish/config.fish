@@ -60,3 +60,7 @@ end
 # ==============================================================================
 # END OF CONFIGURATION - FILE DEPLOYED CLEANLY
 # ==============================================================================
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/skymoon/.local/bin" $PATH
