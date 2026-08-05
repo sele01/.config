@@ -1,42 +1,78 @@
-# 🚀 Hyprland Cheat Sheet (Dvorak Optimized)
+# Hyprland Daily Reference Card
 
-## 📁 Core System Shortcuts
-*   `SUPER + Return`       -> Open Kitty Terminal
-*   `SUPER + C`            -> Close Active Window
-*   `SUPER + Space`        -> Cycle focus to next window
-*   `SUPER + W`            -> Dismiss active notification pop-up
-*   `SUPER + SHIFT + M`    -> Exit Hyprland (Go back to login screen)
+## Basic Controls
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + Return` | Open terminal (kitty) |
+| `SUPER + C` | Close focused window |
+| `SUPER + Shift + M` | Exit Hyprland |
+| `SUPER + R` | Open app launcher (rofi) |
+| `SUPER + V` | Clipboard history |
+| `SUPER + W` | Dismiss notifications |
 
-## 🗺️ Workspace Navigation (Move your eyes)
-*   `SUPER + Q`            -> Switch to Workspace 1 (Laptop Screen)
-*   `SUPER + A`            -> Switch to Workspace 2 (Coding/Craft)
-*   `SUPER + O`            -> Switch to Workspace 3 (Zen Browser)
-*   `SUPER + E`            -> Switch to Workspace 4 (Firefox/Testing)
+## Workspaces
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + 1` | Go to workspace 1 |
+| `SUPER + 2` | Go to workspace 2 |
+| `SUPER + 3` | Go to workspace 3 |
+| `SUPER + 4` | Go to workspace 4 |
+| `SUPER + S` | Toggle notes overlay |
+| `SUPER + L` | Toggle reading overlay |
 
-## 📦 Window Management (Move your apps)
-*   `SUPER + SHIFT + Q`    -> Send active window to Workspace 1
-*   `SUPER + SHIFT + A`    -> Send active window to Workspace 2
-*   `SUPER + SHIFT + O`    -> Send active window to Workspace 3
-*   `SUPER + SHIFT + E`    -> Send active window to Workspace 4
+## Focus Movement
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + Tab` | Cycle to next window |
+| `SUPER + ←` | Focus window left |
+| `SUPER + →` | Focus window right |
+| `SUPER + ↑` | Focus window up |
+| `SUPER + ↓` | Focus window down |
 
-## 🗃️ Sliding Drawers (Scratchpads)
-*   `SUPER + L`            -> Toggle "Read" scratchpad (Focus Read app)
-*   `SUPER + S`            -> Toggle "Notes" scratchpad (Obsidian / Neovide)
+## Window Movement
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + Shift + ←` | Move window left |
+| `SUPER + Shift + →` | Move window right |
+| `SUPER + Shift + ↑` | Move window up |
+| `SUPER + Shift + ↓` | Move window down |
+| `SUPER + Alt + ←` | Swap with window left |
+| `SUPER + Alt + →` | Swap with window right |
 
-## 🛠️ Utilities & App Menus
-*   `SUPER + R`            -> Open Application Launcher (Rofi)
-*   `SUPER + V`            -> Search & Paste Clipboard History (Cliphist)
-*   `SUPER + SHIFT + C`    -> Open Wi-Fi Connection Manager (Rofi Script)
-*   `SUPER + SHIFT + V`    -> Trigger AI / Custom Python Prompt (Rofi Script)
-*   `SUPER + SHIFT + Space`-> Toggle Voice-to-Text Recorder (Voxtype)
+## Master Layout
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + M` | Swap window with master |
+| `SUPER + J` | Focus next in stack |
+| `SUPER + K` | Focus previous in stack |
+| `SUPER + I` | Add window as new master |
+| `SUPER + Shift + I` | Remove current master |
 
-## 🖱️ Mouse Bindings (Hold SUPER and click)
-*   `SUPER + Left Click`   -> Drag & move floating windows
-*   `SUPER + Right Click`  -> Resize floating windows
+## Window Resizing
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + Ctrl + H` | Shrink width |
+| `SUPER + Ctrl + L` | Grow width |
+| `SUPER + Ctrl + K` | Shrink height |
+| `SUPER + Ctrl + J` | Grow height |
+| `SUPER + Left drag` | Move window (mouse) |
+| `SUPER + Right drag` | Resize window (mouse) |
 
-## 🔊 Hardware & Media Keys
-*   `Vol Up Key`           -> Raise System Volume (+1%)
-*   `Vol Down Key`         -> Lower System Volume (-1%)
-*   `Mute Key`             -> Toggle Volume Mute
-*   `Brightness Up`        -> Increase Screen Brightness (+1%)
-*   `Brightness Down`      -> Decrease Screen Brightness (-1%)
+## Window States
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + F` | Toggle fullscreen |
+| `SUPER + Shift + F` | Toggle floating |
+| `SUPER + Shift + P` | Toggle pseudo-tile |
+
+## Keyboard Layout
+| Shortcut | Action |
+|----------|--------|
+| `Win + Space` | Toggle Dvorak/QWERTY |
+
+## Media Keys
+| Key | Action |
+|-----|--------|
+| Volume Up/Down | Adjust volume |
+| Mute | Toggle mute |
+| Brightness Up/Down | Adjust screen brightness |
