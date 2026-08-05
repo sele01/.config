@@ -8,7 +8,7 @@ TERM = "xterm-256color"
 [window]
 startup_mode = "Fullscreen"
 decorations = "None"
-opacity = 0.93            # Subtle, elegant transparency
+opacity = 0.10            # Subtle, elegant transparency
 dynamic_title = true
 
 [window.padding]

@@ -19,6 +19,9 @@ alias re='reboot'
 alias up='sudo apt update && sudo apt upgrade -y'
 alias o='open .'
 alias c='code .'
+alias al='alacritty'
+alias lg='lazygit'
+alias type='ttyper -l english200 -w 30'
 
 # Environment Layout Toggles
 alias qwerty="setxkbmap us"
@@ -42,3 +45,9 @@ alias ws='dbus-send --session --dest=org.Cinnamon --type=method_call /org/Cinnam
 alias ai-laguna='uv tool run --from aider-chat aider --model openrouter/poolside/laguna-m.1:free --edit-format diff'
 alias ai-gpt='uv tool run --from aider-chat aider --model openrouter/openai/gpt-oss-120b:free --edit-format diff'
 alias ai-nvidia='uv tool run --from aider-chat aider --model openrouter/nvidia/nemotron-3-ultra-550b-a55b:free --edit-format diff'
+
+
+#local ai
+alias aiqwen='ollama run qwen2.5:7b'
+alias ailama='ollama run llama3.1'
+alias aiweb='open-webui serve'
