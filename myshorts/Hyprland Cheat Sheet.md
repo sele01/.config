@@ -10,15 +10,19 @@
 | `SUPER + V` | Clipboard history |
 | `SUPER + W` | Dismiss notifications |
 
-## Workspaces
-| Shortcut | Action |
-|----------|--------|
-| `SUPER + 1` | Go to workspace 1 |
-| `SUPER + 2` | Go to workspace 2 |
-| `SUPER + 3` | Go to workspace 3 |
-| `SUPER + 4` | Go to workspace 4 |
-| `SUPER + S` | Toggle notes overlay |
-| `SUPER + L` | Toggle reading overlay |
+## Workspace Layout
+| Workspace | Key | Purpose |
+|-----------|-----|---------|
+| 1 | `SUPER + A` | Code & Terminal |
+| 2 | `SUPER + O` | Projects |
+| 3 | `SUPER + E` | Browser (main) |
+| 4 | `SUPER + U` | Browser (dev/test) |
+| 5 | `SUPER + I` | Chat & Communication |
+| 6 | `SUPER + D` | Media (music, video) |
+| 7 | `SUPER + H` | Files & System |
+| 8 | `SUPER + T` | Free |
+| 9 | `SUPER + N` | Free |
+| 10 | `SUPER + G` | Free |
 
 ## Focus Movement
 | Shortcut | Action |
@@ -76,3 +80,25 @@
 | Volume Up/Down | Adjust volume |
 | Mute | Toggle mute |
 | Brightness Up/Down | Adjust screen brightness |
+
+## Special Workspaces
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + S` | Toggle notes overlay |
+| `SUPER + L` | Toggle reading overlay |
+
+## Screenshots
+| Shortcut | Action |
+|----------|--------|
+| `Print` | Full screen → save + clipboard |
+| `SUPER + Print` | Select area → save + clipboard |
+| `SUPER + Shift + Print` | Select area → edit with swappy |
+
+## Power Management
+| Shortcut | Action |
+|----------|--------|
+| `SUPER + Shift + D` | Dim screen to 5% |
+| `SUPER + Shift + B` | Restore full brightness |
+| `SUPER + Shift + S` | Put PC to sleep |
+| `SUPER + Shift + L` | Lock screen |
+
