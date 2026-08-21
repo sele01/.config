@@ -1,0 +1,49 @@
+# Top-level global performance tweaks
+add_newline = true
+command_timeout = 2000
+
+# Defines the sequence of your multi-line layout
+format = """
+$username$hostname$directory$git_branch$git_status$git_state$git_metrics
+$character
+"""
+
+# Input marker line settings
+[character]
+success_symbol = "[❯](bold green) "
+error_symbol = "[❯](bold red) "
+vicmd_symbol = "[❮](bold yellow) "
+
+# Directory rendering and truncation adjustments
+[directory]
+truncation_length = 4
+truncate_to_repo = true
+style = "bold cyan"
+repo_indicator = " "
+
+# Git settings built to survive slow repositories
+[git_branch]
+#symbol = " "
+#style = "bold violet"
+#format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+ignore_repo_paths = ["~/dotfiles/hypr"] 
+
+# Showing system resources usage context cleanly
+[cmd_duration]
+min_time = 500
+style = "bold yellow"
+format = "took [$duration]($style) "
+# Displays your current Python Virtual Environment or version
+[python]
+symbol = " "
+format = "via [${symbol}${version}]($style) "
+
+# Displays your active Node.js runtime version
+[nodejs]
+symbol = " "
+format = "via [${symbol}${version}]($style) "
+

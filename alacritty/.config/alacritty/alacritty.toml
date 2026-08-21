@@ -22,11 +22,11 @@ y = 12
 size = 16.0                # Adjust to your preference
 
 [font.normal]
-family = "monospace"  # High-quality coding font with icon/glyph support
+family = "JetBrainMono Nerd Font"  # High-quality coding font with icon/glyph support
 style = "Regular"
 
 [font.bold]
-family = "monospace"
+family = "JetBrainMono Nerd Font"
 style = "Bold"
 
 # ==========================================

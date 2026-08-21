@@ -64,3 +64,6 @@ end
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/skymoon/.local/bin" $PATH
+
+# Starship 
+starship init fish | source
